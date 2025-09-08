@@ -5,7 +5,11 @@ import org.springframework.stereotype.Service
 @Service
 class FibonacciService {
     fun fibonacci(n: Int): Int {
+        require(n >= 1)
         return if (n == 1) 0
-        else 0 // TODO instead of this logic implement fibonacci
+        else
+            return if (n == 2) 1
+        else
+            return fibonacci(n-1) + fibonacci(n-2)
     }
 }
